@@ -20,11 +20,11 @@
                 </div>
                 <div class="text-lg font-medium">CloudWay</div>
             </div>
-            <ul class="flex items-center space-x-6 text-sm">
-                <li class="bg-[#353740] px-4 py-2 rounded-lg"><a href="#">Active Accounts</a></li>
-                <li><a href="#">Inactive Accounts</a></li>
-            </ul>
+            <livewire:menu :menuItems="[
+                ['title' => 'Active Accounts', 'isActive' => true],
+                ['title' => 'Inactive Accounts', 'isActive' => false]
+            ]" />
         </div>
-        <button class="px-4 py-2 text-sm text-white bg-blue-600 rounded-lg hover:bg-blue-500">Create Configuration</button>
+        <livewire:button buttonClass="px-4 py-2 text-sm text-white bg-blue-600 rounded-lg hover:bg-blue-500" buttonText="Create Configuration" />
     </div>
 </header>
