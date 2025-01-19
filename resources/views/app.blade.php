@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{-- Tailwind CSS --}}
     <link rel="stylesheet" href="{{ asset('static/app.css') }}">
+    {{-- AlpineJS --}}
+    <link rel="stylesheet" href="{{ asset('static/alpine.js') }}">
     {{-- Livewire Styles --}}
     @livewireStyles
 </head>
