@@ -17,17 +17,16 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'uuid',
-        'name',
-        'email',
-        'password',
-        'phone_number',
-        'role',
-        'status',
-        'trial_end',
-        'plan',
-        'subscription_start',
-        'subscription_end',
+        'id',        // UUID identifier
+        'n',         // User's name
+        'e',         // User's email
+        'p',         // User's password
+        'ph',        // User's phone number
+        'r',         // User's role ('u' or 'a')
+        't_e',       // Trial end date
+        's_s',       // Subscription start date
+        's_e',       // Subscription end date
+        'pl',        // Subscription plan ('w', 'm', 'y')
     ];
 
     /**
@@ -36,19 +35,28 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'p',          // Hide password
+        'remember_token', // Hide remember_token
     ];
 
     /**
-     * The attributes that should be cast.
+     * The attributes that should be cast to native types.
      *
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-        'subscription_start' => 'datetime',
-        'subscription_end' => 'datetime',
+        's_s' => 'datetime',   // Cast subscription start to datetime
+        's_e' => 'datetime',   // Cast subscription end to datetime
+        't_e' => 'datetime',   // Cast trial end to datetime
     ];
+
+    /**
+     * Determine if the user's subscription is still active.
+     *
+     * @return bool
+     */
+    public function getIsActiveAttribute(): bool
+    {
+        return $this->s_e && $this->s_e->isFuture(); // Check if subscription end date is in the future
+    }
 }
