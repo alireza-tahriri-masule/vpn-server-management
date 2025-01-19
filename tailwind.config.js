@@ -11,6 +11,10 @@ export default {
         center: true,
         padding: '2rem'
       },
+      safelist: [
+        'text-red-500',
+        'text-green-500',
+      ],
       fontFamily: {
         english: ["Kode mono", "monospace"]
       },

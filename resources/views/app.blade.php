@@ -12,8 +12,9 @@
 
 <body class="bg-[#0c1019] text-white font-english">
 
-    <div id="app" class="border border-[#1f2432] container p-0 my-10 rounded-lg">
+    <div id="app" class="border border-[#1f2432] container p-0 pb-4 my-10  rounded-lg space-y-8">
         <livewire:header />
+        <livewire:user-table />
     </div>
 
     {{-- Livewire Scripts --}}
