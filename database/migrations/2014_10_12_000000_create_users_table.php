@@ -15,7 +15,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->uuid('id')->primary(); // Primary key: Unique identifier (UUID) for each user.
+            $table->uuid('uuid')->primary(); // Primary key: Unique identifier (UUID) for each user.
             $table->string('n'); // User's name (shortened to 'n').
             $table->string('e')->unique(); // User's email address (shortened to 'e') and must be unique.
             $table->string('p'); // User's password (shortened to 'p') stored securely.

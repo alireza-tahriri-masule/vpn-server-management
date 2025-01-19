@@ -19,7 +19,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => Str::uuid(), // Generate a UUID for the user
+            'uuid' => Str::uuid(), // Generate a UUID for the user
             'n' => $this->faker->name(), // Generate a fake name
             'e' => $this->faker->unique()->safeEmail(), // Generate a unique email
             'p' => Str::random(10), // Generate a random password (10 characters)
