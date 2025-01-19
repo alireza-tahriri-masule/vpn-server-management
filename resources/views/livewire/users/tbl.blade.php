@@ -149,12 +149,11 @@
                         <div class="p-1 bg-green-500 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" class="w-4 h-4" x="0" y="0"
-                                viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"
-                                class="">
+                                viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
                                 <g>
                                     <path
                                         d="M12 24a5.498 5.498 0 0 1-4.176-1.92 5.494 5.494 0 0 1-4.31-1.595 5.497 5.497 0 0 1-1.595-4.31C.707 15.136-.001 13.617-.001 12s.708-3.136 1.92-4.175a5.496 5.496 0 0 1 1.595-4.31 5.522 5.522 0 0 1 4.31-1.595 5.498 5.498 0 0 1 8.352 0 5.497 5.497 0 0 1 5.905 5.905c1.212 1.039 1.92 2.558 1.92 4.175s-.708 3.136-1.92 4.175a5.496 5.496 0 0 1-1.595 4.31 5.491 5.491 0 0 1-4.31 1.595A5.498 5.498 0 0 1 12 24Zm-3.274-4.095.37.549a3.5 3.5 0 0 0 5.808 0l.37-.549.649.126a3.498 3.498 0 0 0 4.107-4.106l-.127-.65.55-.37a3.5 3.5 0 0 0 0-5.808l-.55-.37.127-.65a3.498 3.498 0 0 0-4.107-4.106l-.649.126-.37-.549a3.5 3.5 0 0 0-5.808 0l-.37.549-.649-.126A3.5 3.5 0 0 0 3.97 8.077l.127.65-.55.37a3.5 3.5 0 0 0 0 5.808l.55.37-.127.65a3.498 3.498 0 0 0 4.107 4.106l.649-.126Zm3.184-4.485 5.793-5.707-1.404-1.425-5.809 5.701-2.793-2.707-1.393 1.437 2.782 2.696c.391.391.903.585 1.416.585s1.021-.193 1.407-.58Z"
-                                        fill="#ffffff" opacity="1" data-original="#000000" class=""></path>
+                                        fill="#ffffff" opacity="1" data-original="#000000"></path>
                                 </g>
                             </svg>
                         </div>
@@ -165,15 +164,14 @@
                         <div class="p-1 bg-red-500 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" class="w-4 h-4" x="0" y="0"
-                                viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"
-                                class="">
+                                viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
                                 <g>
                                     <path
                                         d="M16 8a1 1 0 0 0-1.414 0L12 10.586 9.414 8A1 1 0 0 0 8 9.414L10.586 12 8 14.586A1 1 0 0 0 9.414 16L12 13.414 14.586 16A1 1 0 0 0 16 14.586L13.414 12 16 9.414A1 1 0 0 0 16 8Z"
-                                        fill="#ffffff" opacity="1" data-original="#000000" class=""></path>
+                                        fill="#ffffff" opacity="1" data-original="#000000"></path>
                                     <path
                                         d="M12 0a12 12 0 1 0 12 12A12.013 12.013 0 0 0 12 0Zm0 22a10 10 0 1 1 10-10 10.011 10.011 0 0 1-10 10Z"
-                                        fill="#ffffff" opacity="1" data-original="#000000" class=""></path>
+                                        fill="#ffffff" opacity="1" data-original="#000000"></path>
                                 </g>
                             </svg>
                         </div>
@@ -186,12 +184,11 @@
                         <div class="p-1 rounded-lg bg-emerald-500">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" class="w-4 h-4" x="0" y="0"
-                                viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"
-                                class="">
+                                viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
                                 <g>
                                     <path
                                         d="M8 12H6c-1.103 0-2 .897-2 2v2c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2v-2c0-1.103-.897-2-2-2Zm-2 4v-2h2v2H6ZM19 2h-1V1a1 1 0 1 0-2 0v1H8V1a1 1 0 1 0-2 0v1H5C2.243 2 0 4.243 0 7v12c0 2.757 2.243 5 5 5h14c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5ZM5 4h14c1.654 0 3 1.346 3 3v1H2V7c0-1.654 1.346-3 3-3Zm14 18H5c-1.654 0-3-1.346-3-3v-9h20v9c0 1.654-1.346 3-3 3Z"
-                                        fill="#ffffff" opacity="1" data-original="#000000" class=""></path>
+                                        fill="#ffffff" opacity="1" data-original="#000000"></path>
                                 </g>
                             </svg>
                         </div>
@@ -205,12 +202,11 @@
                         <div class="p-1 rounded-lg bg-rose-500">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" class="w-4 h-4" x="0" y="0"
-                                viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"
-                                class="">
+                                viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
                                 <g>
                                     <path
                                         d="M8 12H6c-1.103 0-2 .897-2 2v2c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2v-2c0-1.103-.897-2-2-2Zm-2 4v-2h2v2H6ZM19 2h-1V1a1 1 0 1 0-2 0v1H8V1a1 1 0 1 0-2 0v1H5C2.243 2 0 4.243 0 7v12c0 2.757 2.243 5 5 5h14c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5ZM5 4h14c1.654 0 3 1.346 3 3v1H2V7c0-1.654 1.346-3 3-3Zm14 18H5c-1.654 0-3-1.346-3-3v-9h20v9c0 1.654-1.346 3-3 3Z"
-                                        fill="#ffffff" opacity="1" data-original="#000000" class=""></path>
+                                        fill="#ffffff" opacity="1" data-original="#000000"></path>
                                 </g>
                             </svg>
                         </div>
