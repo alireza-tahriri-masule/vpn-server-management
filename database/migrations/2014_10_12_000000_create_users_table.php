@@ -8,28 +8,32 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * This method is used to create the `users` table with a minimalistic structure
+     * and concise field names for better performance and simplicity.
      */
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->uuid('uuid')->primary(); // Unique identifier for each user
-            $table->string('name'); // Full name of the user
-            $table->string('email')->unique(); // User's email address
-            $table->string('password'); // Hashed password for authentication
-            $table->string('phone_number')->nullable(); // Optional phone number field
-            $table->enum('role', ['user', 'admin', 'moderator'])->default('user'); // User role (with more options like admin and moderator)
-            $table->boolean('status')->default(false); // Whether the user's account is not active
-            $table->timestamp('trial_end')->nullable(); // Days remaining for trial (nullable)
-            $table->timestamp('subscription_start')->nullable(); // Start date of the user's subscription
-            $table->timestamp('subscription_end')->nullable(); // End date of the user's subscription
-            $table->enum('plan', ['weekly', 'monthly', 'yearly'])->default('monthly'); // Subscription plan
-            $table->rememberToken(); // Token for "remember me" functionality
-            $table->timestamps(); // Created and updated timestamps
+            $table->uuid('id')->primary(); // Primary key: Unique identifier (UUID) for each user.
+            $table->string('n'); // User's name (shortened to 'n').
+            $table->string('e')->unique(); // User's email address (shortened to 'e') and must be unique.
+            $table->string('p'); // User's password (shortened to 'p') stored securely.
+            $table->string('ph')->unique()->nullable(); // User's phone number (shortened to 'ph'), optional and unique.
+            $table->enum('r', ['u', 'a'])->default('u'); // User's role (shortened to 'r'), 'u' for user, 'a' for admin. Defaults to 'u'.
+            $table->timestamp('t_e')->nullable(); // Trial end date (shortened to 't_e'), nullable.
+            $table->timestamp('s_s')->nullable(); // Subscription start date (shortened to 's_s'), nullable.
+            $table->timestamp('s_e')->nullable(); // Subscription end date (shortened to 's_e'), nullable.
+            $table->enum('pl', ['w', 'm', 'y'])->default('m'); // Subscription plan (shortened to 'pl'), 'w' for weekly, 'm' for monthly, 'y' for yearly. Defaults to 'm'.
+            $table->rememberToken(); // Token for persistent login sessions ("remember me" functionality).
+            $table->timestamps(); // Auto-managed fields for created_at and updated_at timestamps.
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * This method is used to drop the `users` table when rolling back the migration.
      */
     public function down(): void
     {
