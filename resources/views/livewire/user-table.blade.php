@@ -2,18 +2,18 @@
     <table class="w-full text-sm text-white border-collapse table-auto">
         <thead>
             <tr class="text-gray-300 bg-[#202124]">
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">UUID</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Fullname</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Email</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Password</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Phone No.</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Role</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Is Active</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Trial End</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Plan</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Subscription Start</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Subscription End</th>
-                <th class="px-4 py-2 text-left border border-[#202124] whitespace-nowrap">Actions</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">UUID</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Fullname</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Email</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Password</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Phone No.</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Role</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Is Active</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Trial End</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Plan</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Subscription Start</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Subscription End</th>
+                <th class="px-4 py-2 text-left border border-[#353740] whitespace-nowrap">Actions</th>
             </tr>
         </thead>
         <tbody>
