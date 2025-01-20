@@ -4,16 +4,17 @@ namespace App\Livewire\Users;
 
 use App\Models\User;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class Tbl extends Component
 {
-    // List of users loaded from the database
+    // The list of users loaded from the database
     public $users;
 
-    // UUID of the user currently being edited
+    // The UUID of the user currently being edited
     public $selectedUuid;
 
-    // Array to hold the edited fields (all user-related fields are represented here)
+    // Array to hold the edited user fields (all user-related fields are represented here)
     public $editedUser = [
         'uuid' => '',
         'n' => '',
@@ -26,6 +27,14 @@ class Tbl extends Component
         's_s' => '',
         's_e' => '',
     ];
+
+    // Listen for the 'userCreated' event to refresh the user list
+    #[On('userCreated')]
+    public function refreshUserList()
+    {
+        // Reload the list of users after a new user is created
+        $this->users = User::orderBy('uuid', 'desc')->get();
+    }
 
     /**
      * The mount method is called when the component is initialized.
@@ -46,19 +55,20 @@ class Tbl extends Component
      */
     public function loadUsers(): void
     {
+        // Fetch all users ordered by their UUID in descending order
         $this->users = User::orderBy('uuid', 'desc')->get();
     }
 
     /**
      * This method selects a user by their UUID and loads their information
-     * into the editable fields.
+     * into the editable fields for editing.
      *
      * @param string $uuid The UUID of the user to be edited
      * @return void
      */
     public function edit($uuid)
     {
-        // Find the user by UUID
+        // Retrieve the user by their UUID
         $user = User::where('uuid', $uuid)->first();
 
         if ($user) {
@@ -87,15 +97,15 @@ class Tbl extends Component
      */
     public function saveEdit()
     {
-        // Only save if a user is selected
+        // Only save changes if a user is selected
         if ($this->selectedUuid) {
-            // Update the user's data in the database
+            // Update the user's data in the database with the edited fields
             User::where('uuid', $this->selectedUuid)->update($this->editedUser);
 
-            // Reset the editedUser fields
+            // Reset the editedUser fields to clear the form
             $this->resetEditedUserFields();
 
-            // Reload users after saving the data
+            // Reload the user list after saving the changes
             $this->loadUsers();
         }
     }
@@ -107,6 +117,7 @@ class Tbl extends Component
      */
     private function resetEditedUserFields()
     {
+        // Reset all fields in the editedUser array
         $this->editedUser = [
             'uuid' => '',
             'n' => '',
@@ -119,6 +130,7 @@ class Tbl extends Component
             's_s' => '',
             's_e' => '',
         ];
+        // Reset the selectedUuid to null
         $this->selectedUuid = null;
     }
 
@@ -136,13 +148,13 @@ class Tbl extends Component
      */
     public function delete($uuid)
     {
-        // Attempt to retrieve the user by UUID and throw an exception if not found
+        // Retrieve the user by UUID, throwing an exception if not found
         $user = User::where('uuid', $uuid)->first();
 
         // Delete the user record from the database
         $user->delete();
 
-        // Reload users after deleting
+        // Reload the user list after deletion
         $this->loadUsers();
     }
 
