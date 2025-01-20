@@ -11,6 +11,15 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    // Specifies that the primary key for the model is the 'uuid' column instead of the default 'id'.
+    protected $primaryKey = 'uuid';
+
+    // Disables auto-incrementing for the primary key, as UUIDs are not numeric and are generated manually.
+    public $incrementing = false;
+
+    // Sets the data type of the primary key to 'string' since UUIDs are stored as strings.
+    protected $keyType = 'string';
+
     /**
      * The attributes that are mass assignable.
      *
