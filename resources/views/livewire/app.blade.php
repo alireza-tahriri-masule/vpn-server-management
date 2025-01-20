@@ -11,7 +11,7 @@
 
 <body class="bg-[#0c1019] text-white font-eng">
 
-    <div id="app" class="border border-[#1f2432] cont p-0 pb-4 my-10 rounded-lg space-y-8 container" x-data="{sf: true}">
+    <div id="app" class="border border-[#1f2432] cont p-0 pb-4 my-10 rounded-lg space-y-8 container" x-data="{sf: false}">
         @yield('content')
     </div>
 
