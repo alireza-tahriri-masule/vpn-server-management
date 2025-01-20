@@ -221,6 +221,8 @@
                         Edit
                     </button>
                     <button
+                        wire:click="delete('{{ $user->uuid }}')"
+                        {{-- wire:confirm.prompt="Are you sure?\n\nType DELETE to confirm|DELETE" --}}
                         class="px-3 py-2 text-white bg-red-500 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300">
                         Delete
                     </button>
