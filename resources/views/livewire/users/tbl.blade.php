@@ -18,8 +18,16 @@
         </thead>
         <tbody>
             @foreach ($users as $userIndex => $user)
-            <tr class="border-b border-[#353740] {{ $userIndex % 2 != 0 ? 'bg-[#202124]' : 'bg-[#353740]' }} h-full">
-                <td class="px-4 py-2 whitespace-nowrap">
+            <tr wire:key="{{ $user->uuid }}"
+                class="{{ $user->uuid == $selectedUuid ? 'border-red-500' : ''}} border-y border-[#353740] {{ $userIndex % 2 != 0 ? 'bg-[#202124]' : 'bg-[#353740]' }}">
+                <td wire:dblclick="edit('{{ $user->uuid }}')" class="px-4 py-2 whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
+                        <input type="text" wire:model.defer="editedUser.uuid"
+                            class="w-full p-2 text-white bg-[#202124] border border-[#353740] rounded-lg"
+                            placeholder="Enter UUID">
+                    </form>
+                    @else
                     <div class="flex items-center h-full space-x-1">
                         <div class="p-1 rounded-lg bg-emerald-500">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -34,8 +42,16 @@
                         </div>
                         <div>{{ $user->uuid }}</div>
                     </div>
+                    @endif
                 </td>
-                <td class="px-4 py-2 whitespace-nowrap">
+                <td wire:dblclick="edit('{{ $user->uuid }}')" class="px-4 py-2 whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
+                        <input type="text" wire:model.defer="editedUser.n"
+                            class="w-full p-2 text-white bg-[#202124] border border-[#353740] rounded-lg"
+                            placeholder="Enter Name">
+                    </form>
+                    @else
                     <div class="flex items-center h-full space-x-1">
                         <div class="p-1 bg-indigo-500 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -52,8 +68,16 @@
                         </div>
                         <div>{{ $user->n }}</div>
                     </div>
+                    @endif
                 </td>
-                <td class="px-4 py-2 truncate whitespace-nowrap">
+                <td wire:dblclick="edit('{{ $user->uuid }}')" class="px-4 py-2 truncate whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
+                        <input type="text" wire:model.defer="editedUser.e"
+                            class="w-full p-2 text-white bg-[#202124] border border-[#353740] rounded-lg"
+                            placeholder="Enter Email">
+                    </form>
+                    @else
                     <div class="flex items-center h-full space-x-1">
                         <div class="p-1 rounded-lg bg-amber-500">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -68,8 +92,16 @@
                         </div>
                         <div>{{ $user->e }}</div>
                     </div>
+                    @endif
                 </td>
-                <td class="px-4 py-2 truncate whitespace-nowrap">
+                <td wire:dblclick="edit('{{ $user->uuid }}')" class="px-4 py-2 truncate whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
+                        <input type="text" wire:model.defer="editedUser.p"
+                            class="w-full p-2 text-white bg-[#202124] border border-[#353740] rounded-lg"
+                            placeholder="Enter Password">
+                    </form>
+                    @else
                     <div class="flex items-center h-full space-x-1">
                         <div class="p-1 bg-red-500 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -86,8 +118,16 @@
                         </div>
                         <div>{{ $user->p }}</div>
                     </div>
+                    @endif
                 </td>
-                <td class="px-4 py-2 whitespace-nowrap">
+                <td wire:dblclick="edit('{{ $user->uuid }}')" class="px-4 py-2 whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
+                        <input type="text" wire:model.defer="editedUser.ph"
+                            class="w-full p-2 text-white bg-[#202124] border border-[#353740] rounded-lg"
+                            placeholder="Enter UUID">
+                    </form>
+                    @else
                     <div class="flex items-center h-full space-x-1">
                         <div class="p-1 bg-blue-500 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -102,8 +142,18 @@
                         </div>
                         <div>{{ $user->ph }}</div>
                     </div>
+                    @endif
                 </td>
-                <td class="px-4 py-2 whitespace-nowrap">
+                <td wire:dblclick="edit('{{ $user->uuid }}')" class="px-4 py-2 whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
+                        <select id="role" wire:model.defer="editedUser.r"
+                            class="w-full p-2 text-white bg-[#202124] border border-[#353740] rounded-lg">
+                            <option value="u" @selected($user->r == 'u')>User</option>
+                            <option value="a" @selected($user->r == 'a')>Admin</option>
+                        </select>
+                    </form>
+                    @else
                     <div class="flex items-center h-full space-x-1">
                         <div class="p-1 bg-teal-500 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -118,13 +168,32 @@
                         </div>
                         <div>{{ $user->r == 'u' ? 'User' : 'Admin' }}</div>
                     </div>
+                    @endif
                 </td>
                 <td
                     class="px-4 py-2 text-{{ \Carbon\Carbon::now()->lessThanOrEqualTo($user->t_e) ? 'green' : 'red' }}-500 whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
+                        <input type="text" wire:model.defer="editedUser.t_e"
+                            class="w-full p-2 text-white bg-[#202124] border border-[#353740] rounded-lg"
+                            placeholder="Enter Trial End" />
+                    </form>
+                    @else
                     Trial expires on {{ \Carbon\Carbon::parse($user->t_e)->format('Y/F/d') }} - {{
                     \App\Helpers\DateHelper::translateMonthToEnglish(jdate($user->t_e)->format('%Y/%B/%d')) }}
+                    @endif
                 </td>
-                <td class="px-4 py-2 whitespace-nowrap">
+                <td wire:dblclick="edit('{{ $user->uuid }}')" class="px-4 py-2 whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
+                        <select id="plan" wire:model.defer="editedUser.pl"
+                            class="w-full p-2 text-white bg-[#202124] border border-[#353740] rounded-lg">
+                            <option value="w" @selected($user->pl == 'w')>Weekly</option>
+                            <option value="m" @selected($user->pl == 'm')>Monthly</option>
+                            <option value="y" @selected($user->pl == 'y')>Yearly</option>
+                        </select>
+                    </form>
+                    @else
                     <div class="flex items-center h-full space-x-1">
                         <div class="p-1 bg-pink-500 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -142,8 +211,10 @@
                         </div>
                         <div>{{ ['w' => 'Weekly', 'm' => 'Monthly', 'y' => 'Yearly'][$user->pl] }}</div>
                     </div>
+                    @endif
                 </td>
-                <td class="px-4 py-2 text-{{ $user->getIsActiveAttribute() ? 'green' : 'red' }}-500 whitespace-nowrap">
+                <td wire:dblclick="edit('{{ $user->uuid }}')"
+                    class="px-4 py-2 text-{{ $user->getIsActiveAttribute() ? 'green' : 'red' }}-500 whitespace-nowrap">
                     @if ($user->getIsActiveAttribute() === true)
                     <div class="flex items-center h-full space-x-1">
                         <div class="p-1 bg-green-500 rounded-lg">
@@ -179,7 +250,14 @@
                     </div>
                     @endif
                 </td>
-                <td class="px-4 py-2 whitespace-nowrap">
+                <td wire:dblclick="edit('{{ $user->uuid }}')" class="px-4 py-2 whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
+                        <input type="text" wire:model.defer="editedUser.s_s"
+                            class="w-full p-2 text-white bg-[#202124] border border-[#353740] rounded-lg"
+                            placeholder="Enter Subscription Start" />
+                    </form>
+                    @else
                     <div class="flex items-center h-full space-x-1">
                         <div class="p-1 rounded-lg bg-emerald-500">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -196,8 +274,16 @@
                             \App\Helpers\DateHelper::translateMonthToEnglish(jdate($user->s_s)->format('%Y/%B/%d'))
                             }}</div>
                     </div>
+                    @endif
                 </td>
-                <td class="px-4 py-2 whitespace-nowrap">
+                <td wire:dblclick="edit('{{ $user->uuid }}')" class="px-4 py-2 whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
+                        <input type="text" wire:model.defer="editedUser.s_e"
+                            class="w-full p-2 text-white bg-[#202124] border border-[#353740] rounded-lg"
+                            placeholder="Enter Subscription Start" />
+                    </form>
+                    @else
                     <div class="flex items-center h-full space-x-1">
                         <div class="p-1 rounded-lg bg-rose-500">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -214,18 +300,24 @@
                             \App\Helpers\DateHelper::translateMonthToEnglish(jdate($user->s_e)->format('%Y/%B/%d'))
                             }}</div>
                     </div>
+                    @endif
                 </td>
-                <td class="flex items-center px-4 py-2 space-x-2 whitespace-nowrap">
-                    <button
+                <td wire:dblclick="edit('{{ $user->uuid }}')"
+                    class="flex items-center px-4 py-2 space-x-2 whitespace-nowrap">
+                    @if ($selectedUuid && $user->uuid == $selectedUuid)
+                    <button wire:click='saveEdit'
+                        class="px-3 py-2 text-white rounded bg-emerald-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                        Save
+                    </button>
+                    @else
+                    <button wire:click="edit('{{ $user->uuid }}')"
                         class="px-3 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
                         Edit
                     </button>
-                    <button
-                        wire:click="delete('{{ $user->uuid }}')"
-                        {{-- wire:confirm.prompt="Are you sure?\n\nType DELETE to confirm|DELETE" --}}
+                    <button wire:click="delete('{{ $user->uuid }}')"
                         class="px-3 py-2 text-white bg-red-500 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300">
-                        Delete
-                    </button>
+                        Delete</button>
+                    @endif
                 </td>
             </tr>
             @endforeach
