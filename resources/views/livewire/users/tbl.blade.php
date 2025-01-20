@@ -170,7 +170,7 @@
                     </div>
                     @endif
                 </td>
-                <td
+                <td wire:dblclick="edit('{{ $user->uuid }}')"
                     class="px-4 py-2 text-{{ \Carbon\Carbon::now()->lessThanOrEqualTo($user->t_e) ? 'green' : 'red' }}-500 whitespace-nowrap">
                     @if ($selectedUuid && $user->uuid == $selectedUuid)
                     <form wire:submit.prevent="saveEdit" class="flex items-center space-x-2">
@@ -179,8 +179,12 @@
                             placeholder="Enter Trial End" />
                     </form>
                     @else
-                    Trial expires on {{ \Carbon\Carbon::parse($user->t_e)->format('Y/F/d') }} - {{
-                    \App\Helpers\DateHelper::translateMonthToEnglish(jdate($user->t_e)->format('%Y/%B/%d')) }}
+                    @if (is_null($user->t_e))
+                    <div>You Have no Trial</div>
+                    @else
+                    <div>Trial expires on {{ \Carbon\Carbon::parse($user->t_e)->format('Y/F/d') }} - {{
+                        \App\Helpers\DateHelper::translateMonthToEnglish(jdate($user->t_e)->format('%Y/%B/%d')) }}</div>
+                    @endif
                     @endif
                 </td>
                 <td wire:dblclick="edit('{{ $user->uuid }}')" class="px-4 py-2 whitespace-nowrap">
