@@ -9,6 +9,13 @@ An admin panel built with Laravel, Tailwind CSS, AlpineJS, and Livewire to manag
 - **Server Settings**: Configure VPN servers with an intuitive interface.
 - **Real-time Updates**: Powered by Livewire for instant feedback and updates.
 
+## Screenshots
+<div style="display: flex; justify-content: space-around;">
+    <img alt="Vpn-Server-Management Screenshot-01" src="https://github.com/user-attachments/assets/ac6d7c0a-6218-4020-99ec-2187aff80c37" width="50%" />
+    <img alt="Vpn-Server-Management Screenshot-02" src="https://github.com/user-attachments/assets/86591bcb-6fb6-418d-b583-93a3d2304f2d" width="50%" />
+</div>
+
+
 ## Technologies Used
 
 - Laravel
